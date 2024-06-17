@@ -29,8 +29,8 @@ noremap <S-j> 5j
 noremap <S-k> 5k
 noremap <S-l> $
 
-noremap <A-j> :action MoveLineDown<CR>
-noremap <A-k> :action MoveLineUp<CR>
+noremap <C-j> :action MoveLineDown<CR>
+noremap <C-k> :action MoveLineUp<CR>
 
 map <up> <nop>
 map <right> <nop>
