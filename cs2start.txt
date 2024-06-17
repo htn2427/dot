@@ -1,1 +1,1 @@
--allow_third_party_software -console -w 1600 -h 1024 -novid -nojoy -language english +exec cs2config.cfg 
+-allow_third_party_software -console -w 1600 -h 1024 -novid -nojoy -language english +exec cs2conf.cfg 
