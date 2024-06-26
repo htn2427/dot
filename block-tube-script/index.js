@@ -3,23 +3,20 @@
 (video, objectType) => {
   // Forbidden keyword in the video title
   var forbidden_keybords = [
+    "cs",
     "cs2",
-    "bomman",
+    "cs 2",
+    "csgo",
+    "csgo2",
+    "cs go",
+    "cs go 2",
     "faceit",
     "counter-strike",
     "counter strike",
-    "cs",
-    "csgo",
-    "hoag",
-    "mixi gaming",
-    "mixi",
-    "donk",
-    "esport",
     "pubg",
     "lmht",
     "Liên Minh Huyền Thoại",
     "League of Legends",
-    "lck",
     "VALORANT",
   ];
 
