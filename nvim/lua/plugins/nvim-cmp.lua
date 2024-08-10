@@ -39,9 +39,9 @@ return {
 				-- ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 				-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+				["<C-space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<tab>"] = cmp.mapping.confirm({ select = true }),
 			}),
 			-- sourqes for autocompletion
 			sources = cmp.config.sources({
@@ -52,6 +52,7 @@ return {
 			}),
 
 			-- configure lspkind for vs-code like pictograms in completion menu
+			---@diagnostic disable-next-line: missing-fields
 			formatting = {
 				format = lspkind.cmp_format({
 					maxwidth = 50,

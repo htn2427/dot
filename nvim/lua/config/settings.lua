@@ -5,12 +5,15 @@ vim.opt.modelines = 0
 vim.opt.hidden = true
 
 -- maintain undo history between sessions
-vim.opt.swapfile = false
-vim.opt.undofile = true
-vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+-- vim.opt.swapfile = false
+-- vim.opt.undofile = true
+-- vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
 
 -- scroll bounds
 vim.o.scrolloff = 13
+
+--copy clipboard
+vim.opt.clipboard = "unnamedplus" -- use system clipboard as default register
 
 -- ipad scrolling
 vim.opt.mouse = "a"
@@ -61,5 +64,15 @@ vim.opt.softtabstop = 2
 
 -- enable auto indentation
 vim.opt.autoindent = true
-
-vim.opt.relativenumber = true
+vim.opt.number = true
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("highlight_yank", {}),
+	desc = "Hightlight selection on yank",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })
+	end,
+})
+-- vim.opt.numberwidth = 1
+-- vim.opt.relativenumber = true
+-- vim.opt.showtabline = 2
