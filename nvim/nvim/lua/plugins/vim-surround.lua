@@ -8,5 +8,3 @@ return {
 		})
 	end,
 }
-
--- <a>text function</a> hehehqwheqh

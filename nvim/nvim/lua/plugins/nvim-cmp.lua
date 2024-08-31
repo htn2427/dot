@@ -4,13 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
-		{
-			"L3MON4D3/LuaSnip",
-			-- follow latest release.
-			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-			-- install jsregexp (optional!).
-			build = "make install_jsregexp",
-		},
+		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
@@ -23,8 +17,9 @@ return {
 		local lspkind = require("lspkind")
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+		-- require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip").filetype_extend("typescript", { "javascript" })
 		require("luasnip.loaders.from_vscode").lazy_load()
-
 		cmp.setup({
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
@@ -39,18 +34,17 @@ return {
 				-- ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 				-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-space>"] = cmp.mapping.complete(), -- show completion suggestions
+				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<tab>"] = cmp.mapping.confirm({ select = true }),
 			}),
-			-- sourqes for autocompletion
+			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),
-
 			-- configure lspkind for vs-code like pictograms in completion menu
 			---@diagnostic disable-next-line: missing-fields
 			formatting = {
