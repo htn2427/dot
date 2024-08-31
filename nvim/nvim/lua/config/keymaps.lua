@@ -6,9 +6,11 @@ map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- Buffers
 map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "<C-n>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "<C-b>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<leader>bD", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all but the current buffer" })
 map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Close buffer" })
-map("n", "<leader><tab>", "<cmd>b#<cr>", { desc = "Previously opened Buffer" })
+map("n", "<leader>bt", "<cmd>b#<cr>", { desc = "Previously opened Buffer" })
 
 -- Move line
 map({ "v" }, "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
@@ -35,8 +37,8 @@ map("i", "jj", "<ESC>", { desc = "Normal mode" })
 map("i", "kk", "<ESC>", { desc = "Normal mode" })
 
 -- New Windows
-map("n", "<leader>o", "<CMD>vsplit<CR>")
-map("n", "<leader>p", "<CMD>split<CR>")
+-- map("n", "<leader>o", "<CMD>vsplit<CR>")
+-- map("n", "<leader>p", "<CMD>split<CR>")
 
 -- Window Navigation
 map("n", "<C-h>", "<C-w>h")
@@ -58,4 +60,4 @@ map({ "i", "v", "n", "s" }, "<C-z>", "<nop>")
 -- map("v", "<S-l>", "<nop>")
 
 -- tab
-map("n", "<C-t>", ":tabnext<cr>")
+map("n", "<leader>tab", ":tabnext<cr>")
